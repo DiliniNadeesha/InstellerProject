@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="352.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.insteller.ems.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="40.0" fitWidth="75.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/Logo.PNG" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="103.0" layoutY="14.0" text="EMPLOYEE MANAGEMENT SYSTEM LOGIN FORM" textFill="#057530">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="139.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/user_type.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="140.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/gmail.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="141.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/password.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnLogin" alignment="TOP_RIGHT" layoutX="251.0" layoutY="280.0" mnemonicParsing="false" onAction="#btnLogin_OnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-cursor: hand;" text="LOGIN" textFill="#057530">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="cmbUserType" layoutX="175.0" layoutY="84.0" prefHeight="31.0" prefWidth="250.0" promptText="SELECT USERTYPE HERE" />
+      <TextField fx:id="txtEmail" layoutX="176.0" layoutY="149.0" prefHeight="31.0" prefWidth="250.0" promptText="ENTER EMAIL HERE" />
+      <PasswordField fx:id="txtPassword" layoutX="176.0" layoutY="214.0" prefHeight="31.0" prefWidth="250.0" promptText="ENTER PASSWORD HERE" />
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="252.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/login.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

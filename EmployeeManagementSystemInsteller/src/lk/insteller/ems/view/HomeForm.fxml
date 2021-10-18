@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1113.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.insteller.ems.controller.HomeFormController">
+   <children>
+      <ImageView fitHeight="40.0" fitWidth="75.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/Logo.PNG" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="308.0" layoutY="10.0" text="EMPLOYEE MANAGEMENT SYSTEM EMPLOYEE DETAILS FORM" textFill="#057530">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="11.0" layoutY="56.0" prefHeight="221.0" prefWidth="1105.0">
+         <children>
+            <TextField fx:id="txtNic" layoutX="10.0" layoutY="11.0" prefHeight="31.0" prefWidth="377.0" promptText="EMPLOYEE NUMBER HERE" />
+            <ComboBox fx:id="cmbPosition" editable="true" layoutX="465.0" layoutY="66.0" prefHeight="31.0" prefWidth="377.0" promptText="SELECT EMPLOYEE POSITION HERE" />
+            <ComboBox fx:id="cmbDepNo" editable="true" layoutX="10.0" layoutY="174.0" prefHeight="31.0" prefWidth="377.0" promptText="SELECT EMPLOYEE DEPARTMENT NUMBER HERE" />
+            <TextField fx:id="txtName" layoutX="464.0" layoutY="11.0" prefHeight="31.0" prefWidth="377.0" promptText="ENTER EMPLYEE NAME HERE" />
+            <TextField fx:id="txtSalary" layoutX="10.0" layoutY="123.0" prefHeight="31.0" prefWidth="377.0" promptText="ENTER EMPLYEE SALARY HERE" />
+            <ComboBox fx:id="cmbDepName" editable="true" layoutX="10.0" layoutY="66.0" prefHeight="31.0" prefWidth="377.0" promptText="SELECT EMPLOYEE DEPARTMENT HERE" />
+            <Button fx:id="btnSave" alignment="CENTER_RIGHT" layoutX="464.0" layoutY="174.0" mnemonicParsing="false" onAction="#btSave_OnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-cursor: hand;" text="SAVE" textFill="#0a83ab">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="465.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/save.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnUpdate" alignment="CENTER_RIGHT" layoutX="590.0" layoutY="174.0" mnemonicParsing="false" onAction="#btnUpdate_OnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-cursor: hand;" text="UPDATE" textFill="#057530">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnDelete" alignment="CENTER_RIGHT" layoutX="715.0" layoutY="174.0" mnemonicParsing="false" onAction="#btnDelete_OnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-cursor: hand;" text="DELETE" textFill="#f83416">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="588.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/update.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="716.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/delete.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnAdd" alignment="CENTER_RIGHT" layoutX="902.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="35.0" prefWidth="166.0" style="-fx-cursor: hand;" text="NEW EMPLOYEE" textFill="#0aab2c">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="904.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/add.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="948.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/meeting.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtDate" layoutX="464.0" layoutY="123.0" prefHeight="31.0" prefWidth="377.0" promptText="EMPLOYEE JOINED DATE HERE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="11.0" layoutY="285.0" prefHeight="406.0" prefWidth="1105.0">
+         <children>
+            <TableView fx:id="tblEmployee" layoutX="9.0" layoutY="9.0" prefHeight="388.0" prefWidth="1084.0">
+              <columns>
+                <TableColumn prefWidth="113.99996948242188" text="EMPLOYEE ID" />
+                <TableColumn minWidth="5.0" prefWidth="187.0" text="EMPLOYEE NAME" />
+                  <TableColumn prefWidth="181.0" text="DEPARTMENT NAME" />
+                  <TableColumn prefWidth="177.0" text="POSITION" />
+                  <TableColumn prefWidth="158.0" text="SALARY" />
+                  <TableColumn minWidth="0.0" prefWidth="128.0" text="JOINED DATE" />
+                  <TableColumn prefWidth="138.0" text="DEPARTMENT NO" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="lblDate" layoutX="977.0" layoutY="7.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #0aab2c;" textFill="#f5eded">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="850.0" layoutY="7.0" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #0aab2c;" text="LOCAL DATE IS :" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

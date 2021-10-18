@@ -1,0 +1,104 @@
+CREATE DATABASE  IF NOT EXISTS `EMPDB`;
+
+USE `EMPDB`;
+
+
+DROP TABLE IF EXISTS `Department`;
+CREATE TABLE `department` (
+  `depId` varchar(25) NOT NULL,
+  `dep_Name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`depId`)
+);
+
+INSERT INTO `Department` VALUES ('DP001','Marketing Management'),('DP002','HR Management'),('DP003','Software Engineering'),('DP004','QA');
+
+
+
+DROP TABLE IF EXISTS `Employee`;
+CREATE TABLE `Employee` (
+  `empId` varchar(12) NOT NULL,
+  `emp_Name` varchar(100) DEFAULT NULL,
+  `dep_Name` varchar(100) DEFAULT NULL,
+  `position` varchar(100) DEFAULT NULL,
+  `salary` decimal(10,2) DEFAULT NULL,
+  `joined_Date` varchar(50) DEFAULT NULL,
+  `depId` varchar(25) NOT NULL,
+  PRIMARY KEY (empId),
+  CONSTRAINT FOREIGN KEY (`depId`) REFERENCES `Department` (`depId`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+INSERT INTO `Employee` VALUES ('E001','Sulakkana Disanayake','Software Engineering','Software Engineer',125000.00,'May 02,2020','DP003'),
+('E002','Suranga De Silva','QA Engineering','QA',100000.00,'Jan 05,2020','DP004'),
+('E003','Araliya Gunawrdhana','HR Management','HR Manager',55000.00,'May 05,2021','DP002'),
+('E004','Pavani Siriwardhana','Marketing Management','Marketing Manager',65000.00,'Feb o2,2021','DP001'),
+('E005','Sangeeth Warushavithana','Marketing Management','Marketing Manager',85000.00,'Dec 12,2021','DP001'),
+('E006','Damsith Galappaththi','HR Management','HR Manager',75000.00,'Jun 10,2021','DP002'),
+('E007','Imeshi Dulanjana Wellage','QA Engineering','QA',95000.00,'Dec 15,2020','DP004'),
+('E008','Chatura Weththasinghe','Software Engineering','Software Engineer',150000.00,'Sep 09,2021','DP003');
+
+
+
+DROP TABLE IF EXISTS `User`;
+CREATE TABLE `User` (
+  `userId` INT(5) NOT NULL,
+  `userType` varchar(100) DEFAULT NULL,
+  `userName` varchar(20) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`userId`),
+  UNIQUE KEY `email` (`email`)
+);
+
+INSERT INTO `User` VALUES (1,'Admin','admin@1','SulakkanaDisanayake@gmail.com','admin@1234'),(2,'User','user@1','SurangaDeSilva@gmail.com','user@1234');
+
+
+
+
+DROP TABLE IF EXISTS `Login`;
+CREATE TABLE `Login` (
+  `loginId` INT(5) NOT NULL,
+  `userType` varchar(100) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`loginId`),
+  UNIQUE KEY `email` (`email`)
+);
+
+INSERT INTO `Login` VALUES (1,'Admin','SulakkanaDisanayake@gmail.com','admin@1234'),(2,'User','SurangaDeSilva@gmail.com','user@1234');
+
+
+
+
+DROP TABLE IF EXISTS `Profile`;
+CREATE TABLE `Profile` (
+  `ProNo` INT(5) NOT NULL,
+  `fullName` varchar(100) DEFAULT NULL,
+  `userName` varchar(100) DEFAULT NULL,
+  `phone` varchar(11) DEFAULT NULL,
+  `joined_Date` varchar(50) DEFAULT NULL,
+  `address` varchar(200) NOT NULL,
+  PRIMARY KEY (`ProNo`)
+);
+
+INSERT INTO `Profile` VALUES (1,'Sulakkana Disanayake','admin@1','077-7080030','May 02,2020','New road, Heenatiya, Balapitiya'),(2,'Suranga De Silva',
+'user@1','071-9090500','Jan 05,2020','N0.56, Wakwalla, Galle');
+
+
+DESC Employee;
+SELECT * FROM Employee;
+
+DESC Department;
+SELECT * FROM Department;
+
+DESC Login;
+SELECT * FROM Login;
+
+DESC Profile;
+SELECT * FROM Profile;
+
+DESC User;
+SELECT * FROM User;
+
+
+

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="root" prefHeight="700.0" prefWidth="1113.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.insteller.ems.controller.DepartmentFormController">
+   <children>
+      <ImageView fitHeight="40.0" fitWidth="75.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/Logo.PNG" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="293.0" layoutY="11.0" text="EMPLOYEE MANAGEMENT SYSTEM DEPARTMENT DETAILS FORM" textFill="#057530">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="1003.0" layoutY="10.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #0aab2c;" textFill="#f5eded">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="876.0" layoutY="10.0" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #0aab2c;" text="LOCAL DATE IS :" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="9.0" layoutY="59.0" prefHeight="163.0" prefWidth="1096.0">
+         <children>
+            <ImageView fx:id="imgMM" fitHeight="70.0" fitWidth="70.0" layoutX="47.0" layoutY="28.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mm_department.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgHR" fitHeight="70.0" fitWidth="70.0" layoutX="343.0" layoutY="28.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/hr_department.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgQA" fitHeight="70.0" fitWidth="70.0" layoutX="980.0" layoutY="28.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/qa_department.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgSE" fitHeight="70.0" fitWidth="70.0" layoutX="665.0" layoutY="28.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/se_department.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="lblMenu" alignment="CENTER" layoutX="1.0" layoutY="103.0" prefHeight="21.0" prefWidth="1095.0" text="WELCOME" textFill="#057530">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDescription" alignment="CENTER" layoutY="133.0" prefHeight="20.0" prefWidth="1095.0" text="PLEASE SELECT ONE OF ABOVE DEPARTMENT TO PROCEED MAIN OPERATIONS ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="234.0" prefHeight="462.0" prefWidth="1095.0">
+         <children>
+            <TableView fx:id="tblEmpDetails" layoutX="9.0" layoutY="9.0" prefHeight="445.0" prefWidth="1077.0">
+              <columns>
+                <TableColumn prefWidth="118.0" text="EMPLOYEE ID" />
+                <TableColumn prefWidth="189.0" text="EMPLOYEE NAME" />
+                  <TableColumn prefWidth="181.0" text="DEPARTMENT NAME" />
+                  <TableColumn prefWidth="178.0" text="POSITION" />
+                  <TableColumn prefWidth="153.0" text="SALARY" />
+                  <TableColumn prefWidth="122.0" text="JOINED DATE" />
+                  <TableColumn prefWidth="134.0" text="DEPARTMENT NO" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
